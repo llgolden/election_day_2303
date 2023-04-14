@@ -15,26 +15,28 @@ RSpec.describe Race do
     expect(race.candidates).to eq([])
   end
 
-  xit "can contain once candidate" do
+  it "can contain one candidate" do
     race = Race.new("Texas Governor")
+
     candidate1 = race.register_candidate!({name: "Diana D", party: :democrat})
 
-    expect(candidate1.class).to eq(Candidate) 
+    # expect(candidate1.class).to be_a(Candidate)
     expect(candidate1.name).to eq("Diana D") 
     expect(candidate1.party).to eq(:democrat) 
-    expect().to eq() 
-    expect().to eq() 
-    expect().to eq() 
   end
 
-  xit "can contain multiple candidates" do
+  it "can contain multiple candidates" do
     race = Race.new("Texas Governor")
     candidate1 = race.register_candidate!({name: "Diana D", party: :democrat})
     candidate2 = race.register_candidate!({name: "Roberto R", party: :republican})
+    race.add_candidate(candidate1)
+    race.add_candidate(candidate2)
 
-    expect(race.candidates).to eq(candidate1, candidate2) 
-    expect().to eq() 
-    expect().to eq() 
+    expect(race.candidates).to eq([candidate1, candidate2]) 
   end
 
 end #final
+
+
+# expect().to eq() 
+# expect().to eq() 
