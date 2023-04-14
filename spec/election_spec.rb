@@ -16,6 +16,27 @@ RSpec.describe Election do
     expect(election.races).to eq([])
   end
 
+  xit "can contain races" do
+    election = Election.new("2023")
+  
+    expect().to eq()
+    expect().to eq()
+  end
+
+  xit "can contain candidates" do
+    election = Election.new("2023")
+  
+    expect().to eq()
+    expect().to eq()
+  end
+
+  xit "can display vote counts" do
+    election = Election.new("2023")
+  
+    expect().to eq()
+    expect().to eq()
+  end
+
 end
 
 
