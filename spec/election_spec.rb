@@ -9,7 +9,8 @@ RSpec.describe Election do
     expect(election).to be_a(Election)
   end 
 
-  xit "has attributes" do
+  it "has attributes" do
+    election = Election.new("2023")
   
     expect(election.year).to eq("2023")
     expect(election.races).to eq([])
