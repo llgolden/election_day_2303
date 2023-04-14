@@ -14,6 +14,8 @@ class Election
     race.register_candidate!(candidate_details)
   end
 
+
+
   # this method will call the register_candidate! method from the Race class
   # this method will return the Candidate objects for the called race in the election
   # this method will return an array of all Candidate objects in the election

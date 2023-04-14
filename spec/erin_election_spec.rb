@@ -33,7 +33,29 @@ RSpec.describe Election do
       candidate1 = race1.register_candidate!({name: "Diana D", party: :democrat})
       candidate2 = race2.register_candidate!({name: "Roberto R", party: :democrat})
       expect(election.candidates).to eq([candidate1, candidate2])
-    
+    end
+  end
+
+  describe "#vote_counts" do
+    it "can return count of votes" do 
+      election = Election.new("2023")
+      race1 = Race.new("Texas Governor")
+      race2 = Race.new("Texas Lt. Governor")
+      election.add_race(race1)
+      election.add_race(race2)
+      expect(election.candidates).to eq([])
+      candidate1 = race1.register_candidate!({name: "Diana D", party: :democrat})
+      candidate2 = race2.register_candidate!({name: "Roberto R", party: :democrat})
+      candidate1.vote_for!
+      candidate1.vote_for!
+      candidate1.vote_for!
+      2.times { candidate2.vote_for! }
+      expected = {
+        "Diana D" => 3,
+        "Roberto R" => 2
+      }
+
+      expect(election.vote_counts).to eq(expected)
     end
   end
 
