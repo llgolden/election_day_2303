@@ -20,7 +20,6 @@ RSpec.describe Race do
 
     candidate1 = race.register_candidate!({name: "Diana D", party: :democrat})
 
-    # expect(candidate1.class).to be_a(Candidate)
     expect(candidate1.name).to eq("Diana D") 
     expect(candidate1.party).to eq(:democrat) 
   end
@@ -32,9 +31,4 @@ RSpec.describe Race do
 
     expect(race.candidates).to eq([candidate1, candidate2]) 
   end
-
-end #final
-
-
-# expect().to eq() 
-# expect().to eq() 
+end 

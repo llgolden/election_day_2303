@@ -18,10 +18,12 @@ class Election
   # this method will return the Candidate objects for the called race in the election
   # this method will return an array of all Candidate objects in the election
 
+
   # def vote_counts
 
   # end
+
   # this method will update each time a candidate receives a vote_for! them 
   # this method will return a hash with key = candidate#.name and value = @vote
 
-end #final
+end
